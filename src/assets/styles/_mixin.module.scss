@@ -1,0 +1,5 @@
+// Dùng chung và tái sử dụng style logic
+
+@mixin radius_common($radius: 10px) {
+    border-radius: $radius;
+}
