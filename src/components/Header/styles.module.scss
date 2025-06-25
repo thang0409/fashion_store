@@ -1,10 +1,15 @@
 @use '@styles/variable' as *;
 @use '@styles/mixin' as *;
 
+.container {
+    @include flex_box_custom(center, center, 0px);
+}
+
 .containerHeader {
+    width: 1250px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 83px;
 }
 
@@ -17,7 +22,7 @@
 }
 
 .containerMenu {
-    @include flex_box_custom(center, center, 20px);
+    @include flex_box_custom(center, center, 40px);
 }
 
 .boxIcon {
@@ -30,6 +35,12 @@
     &img {
         object-fit: cover;
     }
+}
+
+.menu {
+    padding-top: 9px;
+    font-size: 15px;
+    color: $primary_color;
 }
 
 .menu::after {
