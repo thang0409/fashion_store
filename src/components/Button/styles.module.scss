@@ -1,0 +1,21 @@
+@use '@styles/variable' as *;
+@use '@styles/mixin' as *;
+
+.btn {
+    // @include btn(0, 0, #333, 3px);
+    border: none;
+    color: white;
+    transition: 0.2s linear;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 13px 45px;
+    background-color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        border: 1px solid #333;
+        color: $four_color;
+    }
+}
