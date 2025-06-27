@@ -1,0 +1,54 @@
+// responsive.scss
+
+@use './variable' as *;
+@use './mixin' as *;
+
+/* Responsive cho màn hình nhỏ hơn 1024px */
+@media (max-width: 1024px) {
+    .containerHeader {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .containerBox {
+        display: none;
+    }
+
+    .containerMenu {
+        gap: 20px;
+    }
+
+    .menu {
+        font-size: 14px;
+    }
+}
+
+/* Tablet (dưới 768px) */
+@media (max-width: 768px) {
+    .containerHeader {
+        width: 100%;
+
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .containerMenu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* Mobile (dưới 480px) */
+@media (max-width: 480px) {
+    .menu {
+        font-size: 13px;
+        padding-top: 6px;
+    }
+
+    .boxIcon {
+        width: 22px;
+        height: 22px;
+    }
+}

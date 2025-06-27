@@ -1,0 +1,14 @@
+@use '@styles/variable' as *;
+@use '@styles/mixin' as *;
+
+.box {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.title {
+    font-size: 18px;
+    color: $secondary_color;
+}
