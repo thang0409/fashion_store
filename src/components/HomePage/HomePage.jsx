@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import getProduct from '@/apis/productsService';
 import Popularproduct from '@components/PopularProduct/PopularProduct';
 import SaleHomePage from '@components/SaleHomePage/SaleHomePage';
+import MyFooter from '@components/Footer/Footer';
 
 function HomePage() {
     const { container } = styles;
@@ -31,6 +32,7 @@ function HomePage() {
                 <HeadingListProduct data={listProduct.slice(0, 2)} />
                 <Popularproduct data={listProduct.slice(2, 10)} />
                 <SaleHomePage />
+                <MyFooter />
             </div>
         </div>
     );

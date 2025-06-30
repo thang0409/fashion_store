@@ -1,0 +1,23 @@
+@use '@styles/variable' as *;
+@use '@styles/mixin' as *;
+
+.container {
+    @include flex_box_custom(center, center, 20px);
+
+    flex-direction: column;
+    margin-top: 80px;
+    background-color: $four_color;
+    color: $white_color;
+    padding: 40px 0;
+
+    .boxNav {
+        @include flex_box_custom(center, center, 30px);
+        font-size: 15px;
+
+        .boxItem:hover {
+            opacity: 0.6;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+    }
+}
