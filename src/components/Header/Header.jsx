@@ -1,3 +1,5 @@
+import { useState, useEffect, useContext } from 'react';
+
 import BoxIcon from './BoxIcon/BoxIcon';
 import { dataBoxIcon, dataMenu } from './constans';
 import styles from './styles.module.scss';
@@ -6,6 +8,7 @@ import Logo from '@icons/image/Logo-retina.png';
 import reloadIcon from '@icons/svgs/reload_icon.svg';
 import heartIcon from '@icons/svgs/heart.svg';
 import cartIcon from '@icons/svgs/cart_icon.svg';
+import { SideBarContext } from '@/contexts/SideBarProvider';
 
 function MyHeader() {
     const {
@@ -15,8 +18,26 @@ function MyHeader() {
         containerHeader,
         container
     } = styles;
+
+    const [scrollHeader, setScrollHeader] = useState(false);
+    const { isOpen, setIsOpen } = useContext(SideBarContext);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setScrollHeader(true);
+            } else {
+                setScrollHeader(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <div className={container}>
+        <div className={`${container} ${scrollHeader ? styles.fixed : ''}`}>
             <div className={containerHeader}>
                 {/* Khối bên trái */}
 
@@ -69,6 +90,7 @@ function MyHeader() {
                                         key={index}
                                         content={item.content}
                                         href={item.href}
+                                        setIsOpen={setIsOpen}
                                     />
                                 );
                             })}

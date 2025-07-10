@@ -1,0 +1,35 @@
+.container {
+    padding: 30px 20px 0 20px;
+
+    .title {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .boxRemember {
+        margin-bottom: 30px;
+        input {
+            margin-right: 10px;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .loginBtn {
+        width: 100%;
+    }
+
+    .lostPass {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
